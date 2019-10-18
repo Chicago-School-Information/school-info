@@ -33,7 +33,7 @@ module.exports = function (sequelize, DataTypes) {
         extra_zipcodes: DataTypes.STRING,
         census_tracts: DataTypes.INTEGER,
         extra_wards: DataTypes.INTEGER,
-        extra_computed_region: DataTypes.INTEGER
+        extra_computed_region: DataTypes.INTEGER,
     });
     //Associations will go here
     return Alderman;
