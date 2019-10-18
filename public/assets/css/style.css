@@ -1,0 +1,23 @@
+
+header {
+    margin-top: 0%;
+    height: 10%;
+    background-color: white;
+
+}
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/02/10/04/chicago-1791002_1280.jpg");
+    background-size: cover;
+}
+
+.content {
+  margin-left:30%;
+  margin-top:10%;
+    width: 43%;
+   text-align:center;
+   border:solid;
+   background-color: white;
+
+
+   
+}
