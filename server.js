@@ -1,10 +1,11 @@
 // Requirements
 var express = require("express");
-var app = express();
-
+var db = require("./models");
 
 // Setting up the port - heroku and otherwise
-var PORT = process.env.PORT || 8339;
+var PORT = process.env.PORT || 8039;
+
+var app = express();
 
 // Middleware allowing us to parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
@@ -12,7 +13,6 @@ app.use(express.json());
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
-
 
 // Setting up handlebars.
 var exphbs = require("express-handlebars");
