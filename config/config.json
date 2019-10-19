@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "rootroot",
     "database": "chicago_school_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
