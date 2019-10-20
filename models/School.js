@@ -99,6 +99,15 @@ module.exports = function (sequelize, DataTypes) {
         extra_computed_region: DataTypes.INTEGER
     });
     //Associations will go here
+    School.associate = function(models) {
+        // a school belongs to (has only one) alderman - is in only one ward
+        School.belongsTo(models.Alderman, {
+            // need to have the ward ids match
+          foreignKey: {
+            allowNull: false
+          }
+        });
+      };
     return School;
 };
 
