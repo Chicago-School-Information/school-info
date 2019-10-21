@@ -1,6 +1,7 @@
 // Requirements
 var express = require("express");
 var db = require("./models");
+require('dotenv').config()
 
 // Setting up the port - heroku and otherwise
 var PORT = process.env.PORT || 8039;
