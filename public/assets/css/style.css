@@ -17,15 +17,13 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.content {
-  margin-top:10%;
+.zipcode-entry {
+  margin-top:15%;
+  text-align: center;
+  background-color: white;
   font-family: 'Lato', sans-serif;
-
-    /* width: 100%; */
-    width: 50%;
-    margin-left: 27%;
-   text-align:center;
-   background-color: white;
+  padding: 2%;
+  margin-left: 18%;
    /* background-image: url(http://www.pngmart.com/files/6/Chicago-PNG-Image.png); */
 }
 .boxes-forms {
