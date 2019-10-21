@@ -15,6 +15,7 @@ router.get("/", function(req, res) {
 // could maybe even do a join here with the alderman table to include alderman information
 router.get("/api/:zip", function(req,res){
     // res.render("index-2");
+    console.log("post hit");
     db.School.findAll({
         where: {
             zipcode: req.params.zip
@@ -22,8 +23,10 @@ router.get("/api/:zip", function(req,res){
         // linking to the alderman db to display alderman contact information - 
         include: [db.Alderman]
     }).then(function(schools){
-        res.json(schools);
-        console.log(res.json(schools));
+        hbsObject = {schools:schools}
+        console.log(hbsObject.schools);
+        res.render("index-2",hbsObject);
+
     })
 })
 
