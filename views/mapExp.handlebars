@@ -8,24 +8,59 @@
 
 <h3>My Google Maps Demo</h3>
 <!--The div element for the map -->
+<div id="floating-panel">
+    <input id="address" type="textbox" value="Sydney, NSW">
+    <input id="submit" type="button" value="Geocode">
+</div>
 <div id="map"></div>
 
 <script>
         var map;
+        var infowindow;
         function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
+            zoom: 14,
             center: {lat: 41.8781, lng: -87.6298}
         });
+        infowindow = new google.maps.InfoWindow();
 
         map.data.loadGeoJson('assets/map_data/Chicago_Public_Schools-School_Locations_SY1415.geojson');
+        map.data.addListener('click', function(event){
+            var feat = event.feature;
+            var html = "<b>"+feat.getProperty('school_nm')+"</b><br>"+feat.getProperty('sch_addr');
+            infowindow.setContent(html);
+            infowindow.setPosition(event.latLng);
+            infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+            infowindow.open(map);
+        })
+        
+        var geocoder = new google.maps.Geocoder();
+
+        document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
         // var script = document.createElement('script');
         // script.src = "../map_data/Chicago_Public_Schools-School_Locations_SY1415.geojson"
         // document.getElementsByTagName('head')[0].appendChild(script);
 
 
-        }
-
+        // google.maps.event.addDomListener(window, 'load', initialize);
         // function getSchools (value) {
         //   return {
         //     path: google.maps.SymbolPath.CIRCLE,
@@ -41,8 +76,8 @@
         //   map.data.addGeoJSON(geojson);
         // }
     </script>
-
+    
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjUFAxnkD7SRBGvGXOwKGUc9cNX_1Y5eM&callback=initMap">
     </script>
