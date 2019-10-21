@@ -8,6 +8,7 @@ router.get("/", function(req, res) {
     res.render("index");
 });
 
+<<<<<<< HEAD
 //currently this prints the schools where the zips match. 
 //so i need a way to display this data in the index-2 template. 
 // could maybe even do a join here with the alderman table to include alderman information
@@ -29,4 +30,9 @@ router.get("/api/:zip", function(req,res){
 
 
 
+=======
+router.get("/2", function(req, res) {
+    res.render("index-2");
+});
+>>>>>>> master
 module.exports = router;
