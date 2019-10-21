@@ -2,10 +2,6 @@
 var express = require("express");
 var router = express.Router();
 var db = require("../models");
-<<<<<<< HEAD
-// var maps = require("./maps");
-=======
->>>>>>> master
 
 // temporary route
 router.get("/", function(req, res) {
