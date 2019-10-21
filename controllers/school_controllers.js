@@ -3,7 +3,6 @@ var express = require("express");
 var router = express.Router();
 var db = require("../models");
 
-
 // temporary route
 router.get("/", function(req, res) {
     res.render("index");
@@ -25,14 +24,6 @@ router.get("/api/:zip", function(req,res){
         res.json(schools);
         console.log(res.json(schools));
     })
-})
-
-
-
-router.get("/MAP", function(req,res) {
-    // initMap();
-    res.render("mapExp");
-
 })
 
 
