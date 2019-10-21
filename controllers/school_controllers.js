@@ -2,12 +2,14 @@
 var express = require("express");
 var router = express.Router();
 var db = require("../models");
+var maps = require("./maps");
 
 // temporary route
 router.get("/", function(req, res) {
     res.render("index");
 });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //currently this prints the schools where the zips match. 
 //so i need a way to display this data in the index-2 template. 
@@ -31,6 +33,14 @@ router.get("/api/:zip", function(req,res){
 
 
 =======
+=======
+router.get("/MAP", function(req,res) {
+    // initMap();
+    res.render("mapExp");
+
+})
+
+>>>>>>> master
 router.get("/2", function(req, res) {
     res.render("index-2");
 });
