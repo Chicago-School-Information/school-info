@@ -85,7 +85,7 @@ module.exports = function (sequelize, DataTypes) {
         longitude: DataTypes.FLOAT,
         community_area_number: DataTypes.INTEGER,
         community_area_name: DataTypes.STRING,
-        ward: {
+        ward_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -98,7 +98,12 @@ module.exports = function (sequelize, DataTypes) {
         extra_wards: DataTypes.INTEGER,
         extra_computed_region: DataTypes.INTEGER
     });
-    //Associations will go here
+    School.associate = function(models) {
+        // a school belongs to an alderman because each school has only one ward/alderman
+        School.belongsTo(models.Alderman, {
+            foreignKey: "ward_id",
+        });
+      };
     return School;
 };
 
