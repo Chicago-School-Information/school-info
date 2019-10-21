@@ -5,7 +5,7 @@ var db = require("../models");
 
 // temporary route
 router.get("/", function(req, res) {
-    res.render("index");
+    res.render("index-2");
 });
 
 
