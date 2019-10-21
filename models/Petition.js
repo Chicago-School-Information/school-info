@@ -19,7 +19,12 @@ module.exports = function (sequelize, DataTypes) {
         },
         ward_id: DataTypes.INTEGER
     });
-    //Associations will go here
+    Petition.associate = function(models) {
+        // a petition belongs to an alderman because each signature has only one ward/alderman
+        Petition.belongsTo(models.Alderman, {
+            foreignKey: "ward_id",
+        });
+      };
     return Petition;
 };
 
