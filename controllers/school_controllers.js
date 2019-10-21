@@ -15,4 +15,7 @@ router.get("/MAP", function(req,res) {
 
 })
 
+router.get("/2", function(req, res) {
+    res.render("index-2");
+});
 module.exports = router;
