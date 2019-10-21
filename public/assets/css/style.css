@@ -1,23 +1,68 @@
 
 header {
     margin-top: 0%;
-    height: 10%;
+    height: 5%;
     background-color: white;
+    font-family: 'Lato', sans-serif;
 
+    -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+        
 }
+
 body {
     background-image: url("https://cdn.pixabay.com/photo/2016/11/02/10/04/chicago-1791002_1280.jpg");
     background-size: cover;
+    font-family: 'Lato', sans-serif;
 }
 
 .content {
-  margin-left:30%;
   margin-top:10%;
-    width: 43%;
+  font-family: 'Lato', sans-serif;
+
+    /* width: 100%; */
+    width: 50%;
+    margin-left: 27%;
    text-align:center;
-   border:solid;
    background-color: white;
+   /* background-image: url(http://www.pngmart.com/files/6/Chicago-PNG-Image.png); */
+}
+.boxes-forms {
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
 
+}
+.map {
+  /* width: 800px; */
+  height: 600px;
+  background-color: white;
+  font-family: 'Lato', sans-serif;
 
-   
+  /* margin-left:10%; */
+  /* border: solid; */
+}
+
+.school-report-cards {
+  /* width: 400px; */
+  /* height: 400px; */
+  /* background-color: white; */
+  padding : 2%;
+  font-family: 'Lato', sans-serif;
+
+  height: 600px;
+}
+.card-background{
+  background-color: white;
+  opacity: 80%;
+}
+.Alderman {
+  background-color: white;
+  opacity: 80%;
+  margin-left:30%;
+  text-align: center;
+  margin-bottom: 5%;
+  padding: 2%;
+  font-family: 'Lato', sans-serif;
+
 }
