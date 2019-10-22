@@ -10,6 +10,12 @@ $(document).ready(function () {
         },
             function (data, status) {
                 console.log(data);
+                          
+                for (var i = 0; i < data.schools.length; i++) {
+                    var school_name = data.schools[i].school_name;
+                    $(".school-report-cards").append(school_name);
+                };
+                
             })
     }
 
