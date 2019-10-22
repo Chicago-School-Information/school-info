@@ -23,7 +23,7 @@ $(document).ready(function () {
             return;
         } else {
         sendPetition(newSignature);
-        location.reload();
+            alert(`${newSignature.first_name}, your name has been added.`)
         }
     });
 
