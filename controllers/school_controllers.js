@@ -11,6 +11,7 @@ router.get("/", function(req, res) {
 
 //currently this prints the schools where the zips match & joins with relevent alderman info
 router.get("/api/:zip", function(req,res){
+    console.log(req.params);
     // res.render("index-2");
     console.log("post hit");
     db.School.findAll({
@@ -22,8 +23,8 @@ router.get("/api/:zip", function(req,res){
     }).then(function(schools){
         hbsObject = {schools:schools}
         console.log(hbsObject);
-        res.render("index-2",hbsObject);
-
+        // res.render("index-2",hbsObject);
+        res.json();
     })
 })
 
@@ -31,7 +32,7 @@ router.post("/api/petition", function(req, res) {
         db.Petition.create(req.body).then(function(dbPetition) {
           console.log(req);
           console.log(res);
-            res.json(dbPetition);
+        res.json(dbPetition);
         });
       });
  
