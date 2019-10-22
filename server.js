@@ -1,7 +1,6 @@
 // Requirements
 var express = require("express");
 var db = require("./models");
-require('dotenv').config()
 
 // Setting up the port - heroku and otherwise
 var PORT = process.env.PORT || 8039;
@@ -14,11 +13,6 @@ app.use(express.json());
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
-
-// Setting up handlebars.
-var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/school_controllers.js");
