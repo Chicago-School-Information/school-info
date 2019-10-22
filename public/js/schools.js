@@ -1,17 +1,17 @@
 var address = "";
 
-        $("#submit").on("click", function (event) {
-            event.preventDefault();
-            let userZip = $("#zipcode").val().trim();
-            console.log(userZip);
-            var queryURL = "/api/"+userZip;
-            $.ajax(queryURL).then(function (req,res) {
-                console.log(req.json());
-                console.log(res);
-            })
-        })
- 
-   
+// function sendZip(zip) {
+//     $.post("/api/", zip, function () {
+//         console.log("i got hit");
+//     });
+// }
+//         $("#submit").on("click", function (event) {
+//             event.preventDefault();
+//             let userZip = $("#zipcode").val().trim();
+//             sendZip(userZip);
+//             })
+         
+        
         // $(".petition-button").on("click", function (event) {
         //     alert("submit button hit")
         // })
