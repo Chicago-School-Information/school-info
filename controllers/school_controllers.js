@@ -24,7 +24,8 @@ router.get("/api/:zip", function(req,res){
         hbsObject = {schools:schools}
         console.log(hbsObject);
         // res.render("index-2",hbsObject);
-        res.json();
+        // res.json();
+        res.render("/partials/partial", hbsObject);
     })
 })
 
