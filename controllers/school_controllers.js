@@ -9,9 +9,7 @@ router.get("/", function(req, res) {
 });
 
 
-//currently this prints the schools where the zips match. 
-//so i need a way to display this data in the index-2 template. 
-// could maybe even do a join here with the alderman table to include alderman information
+//currently this prints the schools where the zips match & joins with relevent alderman info
 router.get("/api/:zip", function(req,res){
     // res.render("index-2");
     console.log("post hit");
@@ -23,16 +21,20 @@ router.get("/api/:zip", function(req,res){
         include: [db.Alderman]
     }).then(function(schools){
         hbsObject = {schools:schools}
-        console.log(hbsObject.schools);
-        // console.log(hbsObject.schools[0].dataValues.id);
-        res.render("index-2",hbsObject.schools);
+        console.log(hbsObject);
+        res.render("index-2",hbsObject);
 
     })
 })
 
+router.post("/api/petition", function(req, res) {
+        db.Petition.create(req.body).then(function(dbPetition) {
+          console.log(req);
+          console.log(res);
+            res.json(dbPetition);
+        });
+      });
+ 
 
-router.get("/2", function(req, res) {
-    res.render("index-2");
-});
 
 module.exports = router;

@@ -3,15 +3,18 @@ var address = "";
         $("#submit").on("click", function (event) {
             event.preventDefault();
             let userZip = $("#zipcode").val().trim();
-
-            $.get("/api/" + userZip).then(function (data) {
+            console.log(userZip);
+            var queryURL = "/api/"+userZip;
+            $.ajax(queryURL).then(function (req,res) {
+                console.log(req.json());
+                console.log(res);
             })
         })
  
    
-        $(".petition-button").on("click", function (event) {
-            alert("submit button hit")
-        })
+        // $(".petition-button").on("click", function (event) {
+        //     alert("submit button hit")
+        // })
 
 
     var map;
