@@ -5,8 +5,10 @@ var address = "";
             let userZip = $("#zipcode").val().trim();
             console.log(userZip);
             var queryURL = "/api/"+userZip;
-            $.ajax(queryURL).then(function (req,res) {
-                console.log(req.json());
+            console.log(queryURL);
+            $.get(queryURL).then(function (req,res) {
+                console.log("I got hit.")
+                console.log(req);
                 console.log(res);
             })
         })
