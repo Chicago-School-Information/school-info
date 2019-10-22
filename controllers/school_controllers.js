@@ -23,16 +23,19 @@ router.get("/api/:zip", function(req,res){
         include: [db.Alderman]
     }).then(function(schools){
         hbsObject = {schools:schools}
-        console.log(hbsObject.schools);
+        // var hbsObject = {
+        //     schools: schools
+        // }
+        console.log(hbsObject);
         // console.log(hbsObject.schools[0].dataValues.id);
-        res.render("index-2",hbsObject.schools);
+        res.render("index-2",hbsObject);
 
     })
 })
 
 
-router.get("/2", function(req, res) {
-    res.render("index-2");
-});
+// router.get("/2", function(req, res) {
+//     res.render("index-2");
+// });
 
 module.exports = router;
