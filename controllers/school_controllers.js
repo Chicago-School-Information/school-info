@@ -1,12 +1,13 @@
 // requirements
 var express = require("express");
 var router = express.Router();
+var path = require("path");
 var db = require("../models");
 
 // temporary route
 router.get("/", function(req, res) {
-    res.render("index-2");
-});
+    res.sendFile(path.join(__dirname, "../public/html/index.html")
+)});
 
 
 //currently this prints the schools where the zips match & joins with relevent alderman info
@@ -23,9 +24,9 @@ router.get("/api/:zip", function(req,res){
     }).then(function(schools){
         hbsObject = {schools:schools}
         console.log(hbsObject);
-        res.render("partials/partials",hbsObject);
+        res.json(hbsObject);
         // res.json();
-        // res.redirect("partials", hbsObject);
+        // res.render("partials", hbsObject);
     })
 })
 
