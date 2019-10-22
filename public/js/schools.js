@@ -47,7 +47,15 @@ var address = "";
         resultsMap.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
             map: resultsMap,
-            position: results[0].geometry.location
+            position: results[0].geometry.location,
+            icon: {
+                path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+                scale: 5,
+                fillColor: 'blue',
+                fillOpacity: 1,
+                strokeColor: 'blue',
+                strokeWeight: 5
+            }
         });
         } else {
         alert('Geocode was not successful for the following reason: ' + status);
