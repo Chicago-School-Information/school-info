@@ -32,10 +32,11 @@ $(document).ready(function () {
                             </a> </li>
                           <div class="collapse" id="collapseExample">
                             <div class="card card-body">
-                            <ul><li><a href="malito:${aldermanEmail}">${aldermanEmail}</li><li>${aldermanPhone}</li></ul>
+                            <ul><li><a href="mailto:${aldermanEmail}" target="_blank">${aldermanEmail}</a></li><li>${aldermanPhone}</li></ul>
                             </div>
                           </div>
                           </ul><hr>`);
+
                         
                         
 
