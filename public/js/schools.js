@@ -12,6 +12,10 @@ $(document).ready(function () {
             function (data, status) {
                 console.log(data);
                 $(".school-report-cards").empty();
+                if (data.schools === undefined || data.schools.length == 0) {
+                    $(".school-report-cards").append(`No CPS schools in that zip code.<br> Please reach out to CPS to find out more information about educational resources in this area.`);
+     
+                } else {
                 for (var i = 0; i < data.schools.length; i++) {
                     var school_name = data.schools[i].school_name;
                     var school_level = data.schools[i].level;
@@ -40,7 +44,7 @@ $(document).ready(function () {
                         
                         
 
-                };
+                }};
 
             });
           
