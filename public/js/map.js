@@ -24,9 +24,6 @@ var chicagoZips = ["60601", "60602", "60603", "60604", "60605", "60606", "60607"
 
     document.getElementById('submit').addEventListener('click', function() {
         geocodeAddress(geocoder, map);
-        $('html,body').animate({
-            scrollTop: $("#map").offset().top},
-            'slow');
     });
     }
 
@@ -49,6 +46,9 @@ var chicagoZips = ["60601", "60602", "60603", "60604", "60605", "60606", "60607"
             }
         });
         }
+        $('html,body').animate({
+            scrollTop: $("#map").offset().top},
+            'slow');
     });
     };}
 
