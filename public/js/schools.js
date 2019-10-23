@@ -15,7 +15,6 @@ $(document).ready(function () {
                     $(".school-report-cards").append(`No CPS schools in that zip code.<br> Please reach out to CPS to find out more information about educational resources in this area.`);
                 // otherwise, display the below data for each of the schools in that zip code
                 } else {
-<<<<<<< HEAD
                 for (var i = 0; i < data.schools.length; i++) {
                     var school_name = data.schools[i].school_name;
                     var school_level = data.schools[i].level;
@@ -28,18 +27,6 @@ $(document).ready(function () {
 
                     $(".school-report-cards").append(`
                         <h5><b>${school_name}<b></h5>
-=======
-                    for (var i = 0; i < data.schools.length; i++) {
-                        var school_name = data.schools[i].school_name;
-                        var school_level = data.schools[i].level;
-                        var school_safety = data.schools[i].safety_icon;
-                        var instruction_score = data.schools[i].instruction_score;
-                        var alderman = data.schools[i].Alderman.alderman;
-                        var aldermanEmail = data.schools[i].Alderman.email;
-                        var aldermanPhone = data.schools[i].Alderman.phone_ward;
-
-                        $(".school-report-cards").append(`
->>>>>>> master
                         <ul>
                             <li>School Level: ${school_level}</li>
                             <li>Safety Strength: ${school_safety}</li>
