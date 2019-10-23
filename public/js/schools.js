@@ -26,7 +26,11 @@ $(document).ready(function () {
 
                         $(".school-report-cards").append(`
                         <ul>
-                            <li>Name: ${school_name}</li>
+                            
+                            <a  class="list-group-item" data-toggle="collapse" href="#item-1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="glyphicon glyphicon-chevron-right"></i>${school_name}
+                            </a>
+                            <div class="list-group collapse" id="item-1">
                             <li>School Level: ${school_level}</li>
                             <li>Safety Strength: ${school_safety}</li>
                             <li>Instruction Score: ${instruction_score}</li>
@@ -38,7 +42,8 @@ $(document).ready(function () {
                             <ul><li><a href="mailto:${aldermanEmail}" target="_blank">${aldermanEmail}</a></li><li>${aldermanPhone}</li></ul>
                             </div>
                           </div>
-                          </ul><hr>`);
+                          </div><hr>
+                          </ul>`);
                     }
                 };
             });
