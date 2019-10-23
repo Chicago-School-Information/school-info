@@ -23,6 +23,9 @@ var address = "";
 
     document.getElementById('submit').addEventListener('click', function() {
         geocodeAddress(geocoder, map);
+        $('html,body').animate({
+            scrollTop: $("#map").offset().top},
+            'slow');
     });
     }
 
