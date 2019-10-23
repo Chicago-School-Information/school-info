@@ -4,6 +4,8 @@ var router = express.Router();
 var path = require("path");
 var db = require("../models");
 
+
+
 // temporary route
 router.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/index.html")
@@ -32,8 +34,14 @@ router.get("/api/:zip", function(req,res){
 
 router.post("/api/petition", function(req, res) {
         db.Petition.create(req.body).then(function(dbPetition) {
-          console.log(req);
-          console.log(res);
+          db.Petition.count({
+              where: {
+                  ward_id: req.body.ward_id
+              }
+          }).then(function(response){
+              console.log(response);
+          })
+        //   console.log(res);
         res.json(dbPetition);
         });
       });
