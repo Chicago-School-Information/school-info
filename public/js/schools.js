@@ -50,10 +50,6 @@ $(document).ready(function () {
         event.preventDefault();
         let userZip = $("#zipcode").val().trim();
         console.log(userZip);
-<<<<<<< HEAD
-        sendZip(userZip);
-        sendAlderman(userZip);
-=======
         if(chicagoZips.includes(userZip)){
             sendZip(userZip);  
         } else {
@@ -61,6 +57,5 @@ $(document).ready(function () {
             $("#zipcode").attr("placeholder", "Chicago zipcodes only")
         }
 
->>>>>>> master
     })
 })
