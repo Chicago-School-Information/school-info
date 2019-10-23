@@ -22,7 +22,7 @@ $(document).ready(function () {
         var signLast = $("#signLastName").val().trim();
         var signEmail = $("#signEmail").val().trim();
         var signWard = $("#signWard").val().trim();
-        // Constructing a signatre object to hand to the database
+        // Constructing a signature object to hand to the database
         var newSignature = {
             first_name: signFirst,
             last_name: signLast,
@@ -30,11 +30,20 @@ $(document).ready(function () {
             ward_id: signWard
         };
         // Won't submit the signature if we are missing any info or if they enter a nonexistent ward
-        if (!signFirst && !signLast && !signEmail && !signWard || signFirst === "" && signLast === "" && signEmail === "") {
-            $("#petition-error").html("<p>Please fill out all fields.</p>");
+        var goodEmail = ValidateEmail(signEmail);
+        $("#petition-error").empty();
+        if (!signFirst || !signLast || !signEmail || !signWard || signFirst === "" && signLast === "" && signEmail === "" || signWard === "") {
+            $("#petition-error").append("<p>Please fill out all fields.</p>");
             return;
-        } else if (signWard > 50) {
-            alert("Please enter a correct ward.");
+        } else if (signWard > 50 || !goodEmail) {
+            $("#petition-error").append("<p>Please enter a correct ward.</p>");
+            $("#petition-error").append("<p>Please enter a valid email address.</p>");
+            return;
+        } else if (signWard > 50 ) {
+            $("#petition-error").append("<p>Please enter a correct ward.</p>");
+            return;
+        } else if (!goodEmail) {
+            $("#petition-error").append("<p>Please enter a valid email address.</p>");
             return;
         } else {
             sendPetition(newSignature);
@@ -50,3 +59,13 @@ $(document).ready(function () {
         });
     }
 })
+
+//Grabbed this email validate function from https://www.w3resource.com/javascript/form/email-validation.php
+function ValidateEmail(mail) 
+{
+if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+{
+    return (true)
+}
+    return (false)
+}
