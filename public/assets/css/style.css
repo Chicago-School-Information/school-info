@@ -10,7 +10,12 @@ header {
           box-shadow: 0 8px 6px -6px black;
         
 }
-
+.list-group {
+  padding: 10px;
+}
+li{
+  padding: 10px;
+}
 body {
     background-image: url("https://cdn.pixabay.com/photo/2016/11/02/10/04/chicago-1791002_1280.jpg");
     background-size: cover;
@@ -82,5 +87,6 @@ ul{
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
 
 
