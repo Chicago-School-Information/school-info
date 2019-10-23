@@ -35,7 +35,7 @@ $(document).ready(function () {
         if (!signFirst || !signLast || !signEmail || !signWard || signFirst === "" && signLast === "" && signEmail === "" || signWard === "") {
             $("#petition-error").append("<p>Please fill out all fields.</p>");
             return;
-        } else if (signWard > 50 || !goodEmail) {
+        } else if (signWard > 50 && !goodEmail) {
             $("#petition-error").append("<p>Please enter a correct ward.</p>");
             $("#petition-error").append("<p>Please enter a valid email address.</p>");
             return;
