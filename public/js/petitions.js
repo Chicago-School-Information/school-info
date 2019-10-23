@@ -30,8 +30,8 @@ $(document).ready(function () {
             ward_id: signWard
         };
         // Won't submit the signature if we are missing any info or if they enter a nonexistent ward
-        if (!signFirst || !signLast || !signEmail || !signWard || signFirst === "" || signLast === "" || signEmail === "") {
-            alert("Please fill out all fields.");
+        if (!signFirst && !signLast && !signEmail && !signWard || signFirst === "" && signLast === "" && signEmail === "") {
+            $("#petition-error").html("<p>Please fill out all fields.</p>");
             return;
         } else if (signWard > 50) {
             alert("Please enter a correct ward.");

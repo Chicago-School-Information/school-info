@@ -21,16 +21,18 @@ $(document).ready(function () {
                     var school_level = data.schools[i].level;
                     var school_safety = data.schools[i].safety_icon;
                     var instruction_score = data.schools[i].instruction_score;
+                    var ward = data.schools[i].ward_id;
                     var alderman = data.schools[i].Alderman.alderman;
                     var aldermanEmail =  data.schools[i].Alderman.email;
                     var aldermanPhone =  data.schools[i].Alderman.phone_ward;
 
                     $(".school-report-cards").append(`
+                        <h5><b>${school_name}<b></h5>
                         <ul>
-                            <li>Name: ${school_name}</li>
                             <li>School Level: ${school_level}</li>
                             <li>Safety Strength: ${school_safety}</li>
                             <li>Instruction Score: ${instruction_score}</li>
+                            <li>Ward: ${ward}</li>
                            <li> <a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Alderman: ${alderman}
                             </a> </li>
