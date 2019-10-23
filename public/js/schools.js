@@ -26,9 +26,7 @@ $(document).ready(function () {
                     var aldermanPhone =  data.schools[i].Alderman.phone_ward;
 
                     $(".school-report-cards").append(`
-                        <h5><b>${school_name}<b></h5>
                         <ul>
-                            
                             <a  class="list-group-item" data-toggle="collapse" href="#item-${i}" role="button" aria-expanded="false" aria-controls="collapseExample">
                             <i class="glyphicon glyphicon-chevron-right"></i>${school_name}
                             </a>
