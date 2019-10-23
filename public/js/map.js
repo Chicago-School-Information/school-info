@@ -1,5 +1,6 @@
-var address = "";
+var chicagoZips = ["60601", "60602", "60603", "60604", "60605", "60606", "60607", "60608", "60609", "60610", "60611", "60612", "60613", "60614", "60615", "60616", "60617", "60618", "60619", "60620", "60621", "60622", "60623", "60624", "60625", "60626", "60628", "60629", "60630", "60631", "60632", "60633", "60634", "60636", "60637", "60638", "60639", "60640", "60641", "60642", "60643", "60644", "60645", "60646", "60647", "60649", "60651", "60652", "60653", "60654", "60655", "60656", "60657", "60659", "60660", "60661", "60664", "60666", "60668", "60669", "60670", "60673", "60674", "60675", "60677", "60678", "60680", "60681", "60682", "60684", "60685", "60686", "60687", "60688", "60689", "60690", "60691", "60693", "60694", "60695", "60696", "60697", "60699", "60701", "60706", "60707", "60803", "60804", "60805", "60827"]
 
+    var address = "";
     var map;
     var infowindow;
     function initMap() {
@@ -28,6 +29,7 @@ var address = "";
 
     function geocodeAddress(geocoder, resultsMap) {
     var address = document.getElementById('zipcode').value;
+    if(chicagoZips.includes(address)){
     geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
         resultsMap.setCenter(results[0].geometry.location);
@@ -43,11 +45,9 @@ var address = "";
                 strokeWeight: 5
             }
         });
-        } else {
-        alert('Geocode was not successful for the following reason: ' + status);
         }
     });
-    }
+    };}
 
 
 
