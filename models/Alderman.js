@@ -1,3 +1,4 @@
+// model containing the data for each of the 50 wards in Chicago
 module.exports = function (sequelize, DataTypes) {
     var Alderman = sequelize.define("Alderman", {
         ward_id: {
@@ -35,7 +36,6 @@ module.exports = function (sequelize, DataTypes) {
         extra_wards: DataTypes.INTEGER,
         extra_computed_region: DataTypes.INTEGER,
     });
-    //Associations will go here
     return Alderman;
 };
 

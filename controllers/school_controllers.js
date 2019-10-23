@@ -9,12 +9,8 @@ router.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/index.html")
 )});
 
-
-//currently this prints the schools where the zips match & joins with relevent alderman info
+// gets the schools where the zips match the user's zip search & joins with relevent alderman info
 router.get("/api/:zip", function(req,res){
-    console.log(req.params);
-    // res.render("index-2");
-    console.log("post hit");
     db.School.findAll({
         where: {
             zipcode: req.params.zip
@@ -23,21 +19,19 @@ router.get("/api/:zip", function(req,res){
         include: [db.Alderman]
     }).then(function(schools){
         hbsObject = {schools:schools}
-        console.log(hbsObject);
         res.json(hbsObject);
-        // res.json();
-        // res.render("partials", hbsObject);
     })
 })
 
+// adding new petitions to the petition database
 router.post("/api/petition", function(req, res) {
         db.Petition.create(req.body).then(function(dbPetition) {
         res.json(dbPetition);
         });
       });
  
+// getting the number of signatures for a particular ward (entered by the user when they sign)
 router.get("/api/petition/:ward", function(req,res){
-    console.log(req.params.ward);
     db.Petition.count({
         where: {
             ward_id: req.params.ward
@@ -46,7 +40,6 @@ router.get("/api/petition/:ward", function(req,res){
         theCount = {count:count};
         res.json(theCount);
     })
-//    console.log(res);
 })
 
 module.exports = router;
