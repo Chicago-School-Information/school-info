@@ -38,14 +38,17 @@ router.post("/api/petition", function(req, res) {
         });
       });
  
-router.get("/api/petition", function(req,res){
+router.get("/api/petition/:ward", function(req,res){
+    console.log(req.params.ward);
     db.Petition.count({
         where: {
-            ward_id: req.body.ward_id
+            ward_id: req.params.ward
         }
-    }).then(function(response){
-        response.json();
+    }).then(function(count){
+        theCount = {count:count};
+        res.json(theCount);
     })
+//    console.log(res);
 })
 
 module.exports = router;
