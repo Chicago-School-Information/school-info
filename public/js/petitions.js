@@ -1,14 +1,13 @@
 $(document).ready(function () {
 
+    // displaying the number of people who have signed a petition in a ward
     function sendCount(ward) {
         $.get("/api/petition/" + ward,
             {
                 ward: ward
             },
             function (data, status) {
-                console.log(data[0]);
                 $("#numSignatures").empty();
-                var signatureCount = data;
                 $("#numSignatures").html(`${data.count} people have signed the petition in your ward.`);
             }
         );
@@ -40,7 +39,6 @@ $(document).ready(function () {
         } else {
             sendPetition(newSignature);
             alert(`${newSignature.first_name}, your name has been added.`)
-            console.log(newSignature.ward_id);
             sendCount(newSignature.ward_id);
             // $("#numSignatures").html
         }

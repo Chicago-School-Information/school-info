@@ -4,9 +4,7 @@ var router = express.Router();
 var path = require("path");
 var db = require("../models");
 
-
-
-// temporary route
+// homepage route
 router.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/index.html")
 )});
