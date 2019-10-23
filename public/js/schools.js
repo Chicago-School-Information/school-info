@@ -26,11 +26,15 @@ $(document).ready(function () {
                     var aldermanPhone =  data.schools[i].Alderman.phone_ward;
 
                     $(".school-report-cards").append(`
+<<<<<<< HEAD
+                       
+=======
+>>>>>>> master
                         <ul>
                             <a  class="list-group-item" data-toggle="collapse" href="#item-${i}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            <i class="glyphicon glyphicon-chevron-right"></i>${school_name}
-                            </a>
-                            <div class="list-group collapse" id="item-${i}">
+                            <h5 class="glyphicon glyphicon-chevron-right"></h5>${school_name}
+                            </h5></a>
+                            <div class="list-group collapse card card-body" id="item-${i}">
                             <li>School Level: ${school_level}</li>
                             <li>Safety Strength: ${school_safety}</li>
                             <li>Instruction Score: ${instruction_score}</li>
@@ -40,7 +44,7 @@ $(document).ready(function () {
                             </a> </li>
                           <div class="collapse" id="collapseExample-${i}">
                             <div class="card card-body">
-                            <ul><li><a href="mailto:${aldermanEmail}" target="_blank">${aldermanEmail}</a></li><li>${aldermanPhone}</li></ul>
+                            <a href="mailto:${aldermanEmail}" target="_blank">${aldermanEmail}</a>${aldermanPhone}
                             </div>
                           </div>
                           </div>
