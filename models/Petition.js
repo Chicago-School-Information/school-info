@@ -1,3 +1,4 @@
+// model for petition signatures
 module.exports = function (sequelize, DataTypes) {
     var Petition = sequelize.define("Petition", {
         first_name: {
