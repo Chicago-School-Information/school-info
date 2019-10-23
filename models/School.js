@@ -1,3 +1,4 @@
+// model organizing the data for each Chicago Public School
 module.exports = function (sequelize, DataTypes) {
     var School = sequelize.define("School", {
         school_id: {
