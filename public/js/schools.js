@@ -28,19 +28,25 @@ $(document).ready(function () {
                     $(".school-report-cards").append(`
                         <h5><b>${school_name}<b></h5>
                         <ul>
+                            
+                            <a  class="list-group-item" data-toggle="collapse" href="#item-${i}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="glyphicon glyphicon-chevron-right"></i>${school_name}
+                            </a>
+                            <div class="list-group collapse" id="item-${i}">
                             <li>School Level: ${school_level}</li>
                             <li>Safety Strength: ${school_safety}</li>
                             <li>Instruction Score: ${instruction_score}</li>
                             <li>Ward: ${ward}</li>
-                           <li> <a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                           <li> <a  data-toggle="collapse" href="#collapseExample-${i}" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Alderman: ${alderman}
                             </a> </li>
-                          <div class="collapse" id="collapseExample">
+                          <div class="collapse" id="collapseExample-${i}">
                             <div class="card card-body">
                             <ul><li><a href="mailto:${aldermanEmail}" target="_blank">${aldermanEmail}</a></li><li>${aldermanPhone}</li></ul>
                             </div>
                           </div>
-                          </ul><hr>`);
+                          </div>
+                          </ul>`);
                     }
                 };
             });
