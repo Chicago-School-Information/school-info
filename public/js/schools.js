@@ -30,7 +30,8 @@ $(document).ready(function () {
                             <a  class="list-group-item" data-toggle="collapse" href="#item-${i}" role="button" aria-expanded="false" aria-controls="collapseExample">
                             <i class="glyphicon glyphicon-chevron-right"></i>${school_name}
                             </a>
-                            <div class="list-group collapse" id="item-${i}">
+                            <div class="list-group collapse card card-body" id="item-${i}">
+                            <ul>
                             <li>School Level: ${school_level}</li>
                             <li>Safety Strength: ${school_safety}</li>
                             <li>Instruction Score: ${instruction_score}</li>
@@ -41,6 +42,7 @@ $(document).ready(function () {
                             <div class="card card-body">
                             <ul><li><a href="mailto:${aldermanEmail}" target="_blank">${aldermanEmail}</a></li><li>${aldermanPhone}</li></ul>
                             </div>
+                            </ul>
                           </div>
                           </div>
                           </ul>`);
