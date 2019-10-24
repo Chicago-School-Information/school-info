@@ -8,7 +8,7 @@ In the midst of the turmoil, our team wanted to provide a way for Chicago citize
 
 ## Page Flow
 
-The user is first asked to enter their zipcode. 
+The user is first asked to enter their zipcode. Users who enter a non-Chicago zip code will be told to enter Chicago zip codes only.
 
 ![zip code entry box](/public/assets/screenshots/enterzip.png)
 
@@ -52,6 +52,8 @@ The school data displayed in Chicago School Search comes from the Chicago Public
 
 The ward data displayed in Chicago School Search comes from the Ward Offices data in the Chicago Data Portal (https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Ward-Offices/htai-wnw4).
 
+School location data displayed in our map is based on a GeoJSON file available from the Chicago Data Portal (https://data.cityofchicago.org/Education/Chicago-Public-Schools-School-Locations-SY1415/3fhj-xtn5).
+
 The background image is courtesy of Pedro Lastra on Unsplash.
 
 ## Technology
@@ -60,7 +62,7 @@ The background image is courtesy of Pedro Lastra on Unsplash.
 * HTML5
 * CSS3
 * Bootstrap
-* Google Maps API
+* Google Maps and Google Geocoding APIs
 
 ### Back End
 * Node.js
