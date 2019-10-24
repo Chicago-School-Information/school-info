@@ -4,6 +4,8 @@ var chicagoZips = ["60601", "60602", "60603", "60604", "60605", "60606", "60607"
 $(document).ready(function () {
     function sendZip(zip) {
         // call to grab zip code info from the database
+        
+
         $.get("/api/" + zip,
             {
                 zip: zip
@@ -24,6 +26,8 @@ $(document).ready(function () {
                     var alderman = data.schools[i].Alderman.alderman;
                     var aldermanEmail =  data.schools[i].Alderman.email;
                     var aldermanPhone =  data.schools[i].Alderman.phone_ward;
+                    var graduationRate =  data.schools[i].graduation_rate;
+
 
                     $(".school-report-cards").append(`
                         <ul>
@@ -34,6 +38,7 @@ $(document).ready(function () {
                             <li>School Level: ${school_level}</li>
                             <li>Safety Strength: ${school_safety}</li>
                             <li>Instruction Score: ${instruction_score}</li>
+                            <li>Graduation Rate: ${graduationRate}</li>
                             <li>Ward: ${ward}</li>
                            <li> <a  data-toggle="collapse" href="#collapseExample-${i}" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Alderman: ${alderman}
@@ -49,6 +54,7 @@ $(document).ready(function () {
                 };
             });
     }
+    
 // listener to grabe the zipcode the user wants to search
     $("#submit").on("click", function (event) {
         event.preventDefault();
@@ -56,6 +62,7 @@ $(document).ready(function () {
         if (chicagoZips.includes(userZip)) {
             // calling the function that grabs the zip code and displays the schools:
             sendZip(userZip);
+            
         } else {
             $("#zipcode").val("");
             $("#zipcode").attr("placeholder", "Chicago zipcodes only")
